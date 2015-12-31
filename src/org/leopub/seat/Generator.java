@@ -79,12 +79,12 @@ public class Generator {
         // line 1
         Cell line2Cell = sheet.createRow(1).createCell(0);
         line2Cell.setCellStyle(h1Style);
-        line2Cell.setCellValue(startTime + "    " + room.getName().replace("-", "ΩÃ"));
+        line2Cell.setCellValue(startTime + "    " + room.getName().replace("-", "Êïô"));
         sheet.addMergedRegion(new CellRangeAddress(1, 1, 0, sheetWidth - 1));
         // line 2
         String unitsName = new String();
         for (Unit unit : units) {
-            unitsName += unit.getName() + "(" + unit.getMembers().size() + "»À) ";
+            unitsName += unit.getName() + "(" + unit.getMembers().size() + "‰∫∫) ";
         }
         Cell line3Cell = sheet.createRow(2).createCell(0);
         line3Cell.setCellValue(unitsName);
@@ -96,7 +96,7 @@ public class Generator {
             Cell cell = row.createCell(i);
             cell.setCellStyle(itemStyle);
             if (i == 1) {
-                cell.setCellValue("Ω≤Ã®");
+                cell.setCellValue("ËÆ≤Âè∞");
             }
         }
         sheet.addMergedRegion(new CellRangeAddress(3, 3, 1, sheetWidth - 2));
@@ -123,54 +123,6 @@ public class Generator {
         sheet.getPrintSetup().setLandscape(true);
         sheet.setHorizontallyCenter(true);
     }
-
-    /*
-    public static List< List<String> > generateNameTable(Room room, List<String> names) {
-        int interval = 2;
-        while(true) {
-            List< List<String> > res = new ArrayList< List<String> >();
-            Iterator<String> nameIter = names.iterator();
-            for (String rowOfSeat : room.getSeats()) {
-                List<String> rowOfPeople = new ArrayList<String>();
-                int seatCounter = 0;
-                int holderCounter = 0;
-                for (char seat : rowOfSeat.toCharArray()) {
-                    if (seat == '*') {
-                        holderCounter = 0;
-                        if (seatCounter == 0) {
-                            if (nameIter.hasNext()) {
-                                rowOfPeople.add(nameIter.next());
-                            } else {
-                                rowOfPeople.add("");
-                            }
-                        }
-                        seatCounter += 1;
-                        if (seatCounter > interval) {
-                            seatCounter = 0;
-                        }
-                    } else if (seat == '|') {
-                        rowOfPeople.add("|");
-                        seatCounter = 0;
-                        holderCounter = 0;
-                    } else if (seat == '-') {
-                        seatCounter = 0;
-                        if (holderCounter == 0) {
-                            rowOfPeople.add("-");
-                        }
-                        holderCounter += 1;
-                        if (holderCounter > interval) {
-                            holderCounter = 0;
-                        }
-                    }
-                }
-                res.add(rowOfPeople);
-            }
-            if (!nameIter.hasNext()) {
-                return res;
-            }
-            interval -= 1;
-        }
-    } */
     public static List< List<String> > generateNameTable(Room room, List<String> names) {
         List< List<String> > res = new ArrayList< List<String> >();
         int interval = 2;

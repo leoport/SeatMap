@@ -44,13 +44,13 @@ public class SeatGUI extends JFrame {
         generateButton = new JButton();
  
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setTitle("¿¼ÊÔ×ùÎ»Éú³ÉÆ÷");
+        setTitle("è€ƒè¯•åº§ä½è¡¨ç”Ÿæˆå™¨");
  
-        courseNameLabel.setText("¿¼ÊÔÃû³Æ");
-        courseTimeLabel.setText("¿¼ÊÔÊ±¼ä");
-        roomLabel.setText("¿¼ÊÔµØµã");
-        unitsLabel.setText("¿¼ÊÔ°à¼¶");
-        generateButton.setText("Éú³É×ùÎ»±í");
+        courseNameLabel.setText("è¯¾ç¨‹åç§°");
+        courseTimeLabel.setText("è€ƒè¯•æ—¶é—´");
+        roomLabel.setText("è€ƒè¯•åœ°ç‚¹");
+        unitsLabel.setText("è€ƒè¯•ç­çº§");
+        generateButton.setText("ç”Ÿæˆåº§ä½è¡¨");
  
         generateButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent event) {
@@ -71,12 +71,10 @@ public class SeatGUI extends JFrame {
  
         setSize(250, 220);
         setLocation(300, 300);
-     // ÎªÖ¸¶¨µÄ Container ´´½¨ GroupLayout
         GroupLayout layout = new GroupLayout(getContentPane());
         this.getContentPane().setLayout(layout);
-        //´´½¨GroupLayoutµÄË®Æ½Á¬Ğø×é£¬£¬Ô½ÏÈ¼ÓÈëµÄParallelGroup£¬ÓÅÏÈ¼¶¼¶±ğÔ½¸ß¡£
         GroupLayout.SequentialGroup hGroup = layout.createSequentialGroup();
-        hGroup.addGap(5);//Ìí¼Ó¼ä¸ô
+        hGroup.addGap(5);//ï¿½ï¿½Ó¼ï¿½ï¿½
         hGroup.addGroup(layout.createParallelGroup()
                 .addComponent(courseNameLabel)
                 .addComponent(courseTimeLabel)
@@ -91,7 +89,6 @@ public class SeatGUI extends JFrame {
                 .addComponent(generateButton));
         hGroup.addGap(5);
         layout.setHorizontalGroup(hGroup);
-        //´´½¨GroupLayoutµÄ´¹Ö±Á¬Ğø×é£¬£¬Ô½ÏÈ¼ÓÈëµÄParallelGroup£¬ÓÅÏÈ¼¶¼¶±ğÔ½¸ß¡£
         GroupLayout.SequentialGroup vGroup = layout.createSequentialGroup();
         vGroup.addGap(10);
         vGroup.addGroup(layout.createParallelGroup()
@@ -112,7 +109,6 @@ public class SeatGUI extends JFrame {
         vGroup.addGroup(layout.createParallelGroup(Alignment.TRAILING)
                 .addComponent(generateButton));
         vGroup.addGap(10);
-        //ÉèÖÃ´¹Ö±×é
         layout.setVerticalGroup(vGroup);
     }
 }
